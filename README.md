@@ -2,6 +2,27 @@
 
 **TODO: Add description**
 
+## Usage
+
+
+Wrappers for Poison functions that allows round-trip
+encoding of non-JSON Elixir types.
+
+The fololowing Elixir types that aren't valid in JSON are
+converted.
+
+* tuples: `{"1", 2}` -> `["!tuple", "1", 2]`
+* atoms:  `:a` -> `":a"`
+
+Other conversions prevent injection of special types:
+
+* tuples: `["!tuple", 1]` -> `["!tuple!", 1]`
+* atoms:  `":a"` -> `"::a"`
+
+
+
+This list of converted values will probably grow over time.
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
