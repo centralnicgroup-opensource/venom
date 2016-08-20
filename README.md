@@ -8,7 +8,7 @@
 Wrappers for Poison functions that allows round-trip
 encoding of non-JSON Elixir types.
 
-The fololowing Elixir types that aren't valid in JSON are
+The following Elixir types that aren't valid in JSON are
 converted.
 
 * tuples: `{"1", 2}` -> `["!tuple", "1", 2]`
